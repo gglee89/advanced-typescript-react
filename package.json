@@ -1,0 +1,19 @@
+{
+  "name": "advanced-typescript-react",
+  "version": "1.0.0",
+  "description": "Advanced Typescript + React project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gglee89/advanced-typescript-react.git"
+  },
+  "author": "Giwoo G Lee",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gglee89/advanced-typescript-react/issues"
+  },
+  "homepage": "https://github.com/gglee89/advanced-typescript-react#readme"
+}
