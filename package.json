@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/gglee89/advanced-typescript-react/issues"
   },
-  "homepage": "https://github.com/gglee89/advanced-typescript-react#readme"
+  "homepage": "https://github.com/gglee89/advanced-typescript-react#readme",
+  "dependencies": {
+    "axios": "^0.20.0"
+  }
 }
