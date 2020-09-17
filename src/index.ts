@@ -1,20 +1,31 @@
-import fs from 'fs';
+import { MatchReader } from './MatchReader';
+import { MatchResult } from './MatchResult';
 
-const matches = fs
-  .readFileSync('./football.csv', {
-    encoding: 'utf-8',
-  })
-  .split('\n')
-  .map((row: string): string[] => {
-    return row.split(',');
-  });
+enum FOOTBALL_FIELDLIST {
+  DATE = 0,
+  HOME_TEAM = 1,
+  AWAY_TEAM = 2,
+  HOME_SCORE = 3,
+  AWAY_SCORE = 4,
+  GAME_RESULT = 5,
+  MVP = 6,
+}
+
+const reader = new MatchReader('football.csv');
+reader.read();
 
 let manUnitedWins: number = 0;
 
-for (let match of matches) {
-  if (match[1] == 'Man United' && match[5] == 'H') {
+for (let match of reader.data) {
+  if (
+    match[FOOTBALL_FIELDLIST.HOME_TEAM] === 'Man United' &&
+    match[FOOTBALL_FIELDLIST.GAME_RESULT] === MatchResult.HomeWin
+  ) {
     manUnitedWins++;
-  } else if (match[2] == 'Man United' && match[5] == 'A') {
+  } else if (
+    match[FOOTBALL_FIELDLIST.AWAY_TEAM] === 'Man United' &&
+    match[FOOTBALL_FIELDLIST.GAME_RESULT] === MatchResult.AwayWin
+  ) {
     manUnitedWins++;
   }
 }
